@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cutie Tips — Hawai'i GET + Tip Calculator</title>
+    <meta
+      name="description"
+      content="A Hawai'i General Excise Tax (4.712%) and tip calculator. Add line items, pick a tip, see your total instantly."
+    />
+    <meta name="theme-color" content="#241733" />
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="icons/favicon-16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/apple-touch-icon.png"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <img src="gfx/cutie-logo.png" alt="cutie tips" class="logo" />
+
+      <p class="subhead">
+        Conjure your subtotal, weigh in the <em>General Excise Tax</em>,
+        sprinkle on a tip.
+      </p>
+
+      <section>
+        <div class="section-label">
+          <span>Line items</span>
+        </div>
+        <div class="items" id="itemsContainer"></div>
+        <button class="add-btn" id="addItemBtn" type="button">
+          + Add item
+        </button>
+      </section>
+
+      <section>
+        <div class="section-label"><span>Tip</span></div>
+        <div class="tip-grid" id="tipGrid">
+          <button class="tip-btn" data-tip="10">10%</button>
+          <button class="tip-btn active" data-tip="15">15%</button>
+          <button class="tip-btn" data-tip="18">18%</button>
+          <button class="tip-btn" data-tip="20">20%</button>
+        </div>
+        <div class="custom-tip-wrap" id="customTipWrap">
+          <label for="customTipInput">Custom %</label>
+          <input
+            type="number"
+            id="customTipInput"
+            min="0"
+            step="1"
+            placeholder="e.g. 22"
+          />
+        </div>
+        <button
+          class="tip-btn"
+          id="customTipToggle"
+          style="width: 100%; margin-top: 8px"
+        >
+          Custom
+        </button>
+      </section>
+
+      <div class="receipt-wrap">
+        <div class="receipt">
+          <div class="receipt-title">The Reckoning</div>
+          <div class="receipt-line">
+            <span class="label">Subtotal</span
+            ><span class="val" id="outSubtotal">$0.00</span>
+          </div>
+          <div class="receipt-line">
+            <span class="label">GET (4.712%)</span
+            ><span class="val" id="outTax">$0.00</span>
+          </div>
+          <div class="receipt-line tip-line">
+            <span class="label" id="outTipLabel">Tip (15%)</span
+            ><span class="val" id="outTip">$0.00</span>
+          </div>
+          <hr class="receipt-divider" />
+          <div class="receipt-total">
+            <span>Total</span><span class="val" id="outTotal">$0.00</span>
+          </div>
+          <div class="receipt-note">( ˶˘ ³˘)♡</div>
+        </div>
+      </div>
+
+      <footer class="app-footer">
+        Made with ✦ by
+        <a href="http://lol.rip" target="_blank" rel="noopener">val</a>
+      </footer>
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
