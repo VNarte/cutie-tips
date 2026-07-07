@@ -2,6 +2,8 @@
 
 A whimsical, gemstone-and-witchcraft-themed tip calculator for Ginger. Add your line items, and it automatically calculates the Hawai'i state General Excise Tax (GET) and lets you pick a tip. No sign-up, no backend, just open it in a browser.
 
+**Try it out** ~ [http://cutie.tips/](http://cutie.tips/)
+
 ## Features
 
 - **Unlimited line items** - add as many pre-tax amounts as you need, each with an optional description
